@@ -1,34 +1,30 @@
-async function fetchWeather() {
-  const weatherElement = document.getElementById("weather");
-  
-  const url = 'https://wttr.in/Belton?format=%C+%t'; // Weather condition and temperature
-  
-  try {
-    const response = await fetch(url);
-    if (!response.ok) throw new Error("Weather data not available");
-    
-    const data = await response.text();
-    weatherElement.innerText = data; // Display the weather data
-  } catch (error) {
-    weatherElement.innerText = "Weather data unavailable";
-    console.error("Weather fetch error:", error);
-  }
-}
+const timeElement = document.getElementById("time");
+const weatherElement = document.getElementById("weather");
 
 function updateTime() {
-  const timeElement = document.getElementById("time");
+    const now = new Date();
+    const options = { timeZone: "America/New_York", hour: '2-digit', minute: '2-digit', second: '2-digit' };
+    timeElement.textContent = `Current Time: ${now.toLocaleTimeString('en-US', options)}`;
+}
 
-  // Get the current time in the Eastern Time Zone
-  const now = new Date();
-  const options = { timeZone: "America/New_York", hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false };
-  const timeString = new Intl.DateTimeFormat("en-US", options).format(now);
+async function fetchWeather() {
+    const url = 'https://wttr.in/Belton?format=%C+%t';
 
-  timeElement.innerText = timeString;
+    try {
+        const response = await fetch(url);
+        const weather = await response.text();
+        weatherElement.textContent = `Current Weather: ${weather}`;
+    } catch (error) {
+        weatherElement.textContent = "Error fetching weather data.";
+    }
 }
 
 // Update time every second
 setInterval(updateTime, 1000);
-updateTime();  // Initial call to set time immediately
+// Fetch weather data every 10 minutes
+fetchWeather();
+setInterval(fetchWeather, 600000);
 
-// Fetch weather data once on load
+// Initial load
+updateTime();
 fetchWeather();
