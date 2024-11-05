@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liquid Gradient Time Display</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real-Time Weather and Time</title>
+    <!-- Import Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMc4q9a2fv+6PA0w+PrO2ptkyoGdQXa9tbz1R2" crossorigin="anonymous">
 </head>
 <body>
-  <div class="time-display" id="time">Loading time...</div>
-  <div class="weather-display" id="weather">Loading weather...</div>
-  <script src="script.js"></script>
+    <div class="container">
+        <h1><i class="fas fa-sun"></i> Current Weather and Time</h1>
+        <div id="time" class="info"><i class="far fa-clock"></i> Loading Time...</div>
+        <div id="weather" class="info"><i class="fas fa-cloud-sun"></i> Loading Weather...</div>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
