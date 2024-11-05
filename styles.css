@@ -30,6 +30,8 @@ body {
     background: rgba(0, 51, 102, 0.85);
     backdrop-filter: blur(10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    width: 90%;  /* Use a percentage to ensure it fits well on smaller screens */
+    max-width: 600px; /* Limit the max width for larger screens */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeIn 1.5s forwards, slideUp 1s forwards;
@@ -69,6 +71,8 @@ h1 {
     font-size: 32px;
     display: flex;
     align-items: center;
+    justify-content: center; /* Center content in info boxes */
+    flex-direction: column; /* Stack items vertically */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInText 1s 2s forwards, slideUp 1s forwards;
