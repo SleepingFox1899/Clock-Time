@@ -25,13 +25,13 @@ body {
 
 .container {
     text-align: center;
-    padding: 40px 60px;
+    padding: 20px; /* Adjusted padding for smaller screens */
     border-radius: 20px;
     background: rgba(0, 51, 102, 0.85);
     backdrop-filter: blur(10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
     width: 90%;  /* Use a percentage to ensure it fits well on smaller screens */
-    max-width: 600px; /* Limit the max width for larger screens */
+    max-width: 500px; /* Adjust max-width for better fit on mobile */
     opacity: 0;
     transform: translateY(30px);
     animation: fadeIn 1.5s forwards, slideUp 1s forwards;
@@ -49,8 +49,8 @@ body {
 
 h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 60px;
-    margin-bottom: 20px;
+    font-size: 32px; /* Adjusted font size for better visibility on mobile */
+    margin-bottom: 15px; /* Reduced margin for mobile */
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
     letter-spacing: 1px;
     opacity: 0;
@@ -63,12 +63,12 @@ h1 {
 }
 
 .info {
-    margin: 20px 0;
-    padding: 20px;
+    margin: 15px 0; /* Adjusted margin for mobile */
+    padding: 15px; /* Adjusted padding for mobile */
     border-radius: 15px;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    font-size: 32px;
+    font-size: 24px; /* Adjusted font size for mobile */
     display: flex;
     align-items: center;
     justify-content: center; /* Center content in info boxes */
@@ -81,7 +81,7 @@ h1 {
 
 .info i {
     margin-right: 10px;
-    font-size: 36px;
+    font-size: 28px; /* Adjusted icon size for mobile */
 }
 
 .info:hover {
@@ -107,17 +107,13 @@ h1 {
 }
 
 @media (max-width: 600px) {
-    .info {
-        font-size: 24px;
-        padding: 15px;
-    }
-
     h1 {
-        font-size: 32px;
+        font-size: 28px; /* Smaller header font size for mobile */
     }
 
-    .container {
-        padding: 20px 30px;
+    .info {
+        font-size: 20px; /* Smaller font size for info box */
+        padding: 10px; /* Padding adjustment for mobile */
     }
 
     .fullscreen-btn {
