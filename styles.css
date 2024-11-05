@@ -1,0 +1,62 @@
+/* Full-screen background */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Time Display Style */
+  .time-display {
+    font-size: 8vw;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(90deg, #ff6b6b, #f0e68c, #6a5acd, #00fa9a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientText 3s infinite alternate;
+  }
+  
+  /* Weather Display Style */
+  .weather-display {
+    font-size: 2vw;
+    color: white;
+    margin-top: 10px;
+  }
+  
+  /* Background Styling */
+  body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #ff6b6b, #f0e68c, #6a5acd, #00fa9a);
+    background-size: 200% 200%;
+    animation: liquidBackground 10s infinite alternate;
+  }
+  
+  /* Liquid gradient animation for background */
+  @keyframes liquidBackground {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Gradient animation for text */
+  @keyframes gradientText {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }  
