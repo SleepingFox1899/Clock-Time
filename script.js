@@ -1,30 +1,48 @@
-const timeElement = document.getElementById("time");
-const weatherElement = document.getElementById("weather");
-
-function updateTime() {
-    const now = new Date();
-    const options = { timeZone: "America/New_York", hour: '2-digit', minute: '2-digit', second: '2-digit' };
-    timeElement.textContent = `Current Time: ${now.toLocaleTimeString('en-US', options)}`;
-}
-
-async function fetchWeather() {
-    const url = 'https://wttr.in/Belton?format=%C+%t';
-
-    try {
-        const response = await fetch(url);
-        const weather = await response.text();
-        weatherElement.textContent = `Current Weather: ${weather}`;
-    } catch (error) {
-        weatherElement.textContent = "Error fetching weather data.";
+document.addEventListener('DOMContentLoaded', function() {
+    // Fetch time and weather
+    function updateTime() {
+        const now = new Date();
+        const options = { timeZone: 'America/New_York', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        document.getElementById('time').textContent = now.toLocaleTimeString('en-US', options);
     }
-}
 
-// Update time every second
-setInterval(updateTime, 1000);
-// Fetch weather data every 10 minutes
-fetchWeather();
-setInterval(fetchWeather, 600000);
+    async function updateWeather() {
+        try {
+            const response = await fetch('https://wttr.in/Belton?format=%C+%t');
+            const weather = await response.text();
+            document.getElementById('weather').textContent = weather;
+        } catch (error) {
+            console.error('Error fetching weather data:', error);
+            document.getElementById('weather').textContent = 'Failed to load weather data';
+        }
+    }
 
-// Initial load
-updateTime();
-fetchWeather();
+    function refreshData() {
+        updateTime();
+        updateWeather();
+    }
+
+    setInterval(refreshData, 1000);
+    refreshData();
+
+    // Fullscreen functionality
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+    fullscreenBtn.addEventListener('click', () => {
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen().catch(err => {
+                console.error(`Error attempting to enable full-screen mode: ${err.message}`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    });
+
+    // Handle orientation change
+    window.addEventListener('resize', () => {
+        if (window.innerHeight > window.innerWidth) {
+            console.log('Portrait mode');
+        } else {
+            console.log('Landscape mode');
+        }
+    });
+});
