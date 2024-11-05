@@ -8,7 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     async function updateWeather() {
         try {
-            const response = await fetch('https://wttr.in/Belton?format=%C+%t');
+            // Update the URL to get the weather in Fahrenheit
+            const response = await fetch('https://wttr.in/Belton?format=%C+%t&F');
             const weather = await response.text();
             document.getElementById('weather').textContent = weather;
         } catch (error) {
@@ -37,12 +38,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Handle orientation change
-    window.addEventListener('resize', () => {
-        if (window.innerHeight > window.innerWidth) {
-            console.log('Portrait mode');
-        } else {
-            console.log('Landscape mode');
-        }
+    // Handle orientation changes
+    window.addEventListener('orientationchange', () => {
+        console.log(`Orientation changed to: ${screen.orientation.angle} degrees`);
     });
 });
