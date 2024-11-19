@@ -1,3 +1,49 @@
+/* Define block themes */
+.block-social-studies {
+    background-color: #3b8d99; /* Calm, scholarly blue */
+    color: white;
+}
+
+.block-ela {
+    background-color: #f1c40f; /* Energetic yellow */
+    color: black;
+}
+
+.block-math {
+    background-color: #3498db; /* Focused blue */
+    color: white;
+}
+
+.block-science {
+    background-color: #2ecc71; /* Fresh, green vibe */
+    color: white;
+}
+
+.block-win {
+    background-color: #9b59b6; /* Relaxing purple */
+    color: white;
+}
+
+.block-gym {
+    background-color: #e74c3c; /* Energetic red */
+    color: white;
+}
+
+.block-spanish {
+    background-color: #f39c12; /* Warm orange */
+    color: white;
+}
+
+/* General style for block info */
+#block-info {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    padding: 10px;
+}
+
+/* General page styling */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -25,13 +71,13 @@ body {
 
 .container {
     text-align: center;
-    padding: 20px; /* Adjusted padding for smaller screens */
+    padding: 20px;
     border-radius: 20px;
     background: rgba(0, 51, 102, 0.85);
     backdrop-filter: blur(10px);
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
-    width: 90%;  /* Use a percentage to ensure it fits well on smaller screens */
-    max-width: 500px; /* Adjust max-width for better fit on mobile */
+    width: 90%;  
+    max-width: 500px;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeIn 1.5s forwards, slideUp 1s forwards;
@@ -49,8 +95,8 @@ body {
 
 h1 {
     font-family: 'Orbitron', sans-serif;
-    font-size: 32px; /* Adjusted font size for better visibility on mobile */
-    margin-bottom: 15px; /* Reduced margin for mobile */
+    font-size: 32px;
+    margin-bottom: 15px;
     text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
     letter-spacing: 1px;
     opacity: 0;
@@ -63,16 +109,16 @@ h1 {
 }
 
 .info {
-    margin: 15px 0; /* Adjusted margin for mobile */
-    padding: 15px; /* Adjusted padding for mobile */
+    margin: 15px 0;
+    padding: 15px;
     border-radius: 15px;
     background: linear-gradient(135deg, #00c6ff, #0072ff);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    font-size: 24px; /* Adjusted font size for mobile */
+    font-size: 24px;
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content in info boxes */
-    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    flex-direction: column;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInText 1s 2s forwards, slideUp 1s forwards;
@@ -81,7 +127,7 @@ h1 {
 
 .info i {
     margin-right: 10px;
-    font-size: 28px; /* Adjusted icon size for mobile */
+    font-size: 28px;
 }
 
 .info:hover {
@@ -108,12 +154,12 @@ h1 {
 
 @media (max-width: 600px) {
     h1 {
-        font-size: 28px; /* Smaller header font size for mobile */
+        font-size: 28px;
     }
 
     .info {
-        font-size: 20px; /* Smaller font size for info box */
-        padding: 10px; /* Padding adjustment for mobile */
+        font-size: 20px;
+        padding: 10px;
     }
 
     .fullscreen-btn {
